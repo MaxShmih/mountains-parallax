@@ -1,0 +1,20 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "mixins/media";
+
+// Common
+ul,li {
+	padding: 0;
+	margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+}
+
+// Sections
+@import "./sections/header";
+@import "./sections/discripSect";
+@import "./sections/footer";
