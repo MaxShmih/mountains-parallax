@@ -1,0 +1,362 @@
+@import "mixins/media";
+
+@keyframes componentsToHeroTranslateX {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes componentsToHeroOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  30%,
+  70% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #0e1f29;
+}
+
+.container {
+  z-index: 5;
+  padding: 40px 80px 0px 60px;
+  width: 100%;
+}
+
+.gradietn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(150deg, #0b1d26, transparent);
+  z-index: 4;
+
+  &_footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background: rgb(14, 31, 41);
+    background: linear-gradient(180deg, rgba(14, 31, 41, 0) 0%, rgba(14, 31, 41, 0.8239670868347339) 73%, rgba(14, 31, 41, 1) 100%);
+    z-index: 5;
+  }
+}
+
+.header {
+
+  &_nav {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    max-height: 25px;
+    width: 100%;
+    font-family: "Roboto", serif;
+    font-style: normal;
+    z-index: 2;
+
+    &_title {
+      color: $text-main;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 32px;
+      text-transform: uppercase;
+
+      &:hover {
+        @include goldHover;
+      }
+    }
+
+    &_links {
+      color: $text-main;
+
+      &_ul {
+        display: flex;
+        list-style: none;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      &_li {
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+      }
+
+      a {
+        color: $text-main;
+        text-decoration: none;
+        transition: 0.35s;
+
+        &:hover {
+          @include goldHover;
+        }
+      }
+    }
+
+    &_acc {
+
+      &_logo {
+        margin-right: 5px;
+      }
+
+      &_wrapp {
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        font-weight: 700;
+        color: $text-main;
+
+        &:hover {
+          color: $text-secondary;
+          fill: $text-secondary;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.layers {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+
+  &_top {
+    z-index: 1;
+    transform: translate3d(0, calc(var(--scrollTop) * -0.5), 0);
+    height: 150vh;
+  }
+
+  &_middle {
+    top: 40%;
+    z-index: 2;
+    transform: translate3d(0, calc(var(--scrollTop) * 0.3), 0);
+  }
+
+  &_bottom {
+    top: 60%;
+    z-index: 3;
+    transform: translate3d(0, calc(var(--scrollTop) / -5.5), 0);
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 200px;
+  transition: transform 1s ease-in-out;
+
+  &_social {
+    &_ul {
+      list-style: none;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      line-height: 0px;
+      color: $text-main;
+      transform: rotate(90deg);
+      margin-left: -75px;
+      display: flex;
+      align-items: center;
+    }
+
+    &_li {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+
+    &_svg {
+      transform: rotate(-90deg);
+      width: 24px;
+      height: 24px;
+      transition: 0.35s;
+
+      &_inst {
+        scale: 1.5;
+      }
+
+      &_twit:hover {
+        scale: 1.5;
+      }
+
+      &_inst:hover {
+        scale: 2;
+      }
+    }
+
+    &:nth-child(1) {
+      animation: componentsToHeroTranslateX 0.4s ease-in-out;
+    }
+  }
+
+  &_title {
+
+    &_span {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: $text-secondary;
+
+      &_animation {
+        animation: componentsToHeroTranslateX 0.9s ease-in-out;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        border-bottom: 2px solid $text-secondary;
+        width: 72px;
+        color: $text-secondary;
+        margin-right: 32px;
+      }
+    }
+
+    &_h1 {
+      max-width: 950px;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: 88px;
+      color: $text-main;
+      animation: componentsToHeroOpacity 1.6s ease-in-out;
+
+      &::selection {
+        color: $text-secondary;
+        background-color: transparent;
+      }
+    }
+
+    &_scroll {
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: $text-main;
+      margin-top: 20px;
+      overflow: hidden;
+
+      span {
+
+        &::selection {
+          color: $text-secondary;
+          background-color: transparent;
+        }
+      }
+
+      &_arrow {
+        margin-left: 15px;
+        animation-name: down;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+
+  &_nav {
+    display: flex;
+    min-width: 85px;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-main;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: 0;
+      height: 120%;
+      width: 1px;
+      background-color: rgba(255, 255, 255, .35);
+    }
+
+    &_ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    &_li {
+      position: relative;
+    }
+
+    &_scroll_link {
+      color: $text-main;
+      text-decoration: none;
+      transition: .3s;
+
+      &:hover {
+        color: $text-secondary;
+      }
+    }
+
+    ul>li:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    &_span {
+      height: 62px;
+      width: 1px;
+      background-color: $text-main;
+      opacity: 0;
+      position: absolute;
+      right: -23px;
+      top: -21px;
+      transition: all 2s;
+
+      &_active {
+        opacity: 1;
+      }
+    }
+  }
+}
