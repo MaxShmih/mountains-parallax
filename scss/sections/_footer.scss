@@ -44,11 +44,14 @@
 			font-size: 24px;
 			font-weight: 700;
 			color: #FBD784;
+
+			&::selection {
+				color: #000;
+				background-color: transparent;
+			}
 		}
 
 		&_links {
-
-			ul {}
 
 			li {
 				list-style: none;
@@ -91,18 +94,3 @@
 		}
 	}
 }
-
-// Chronicle = Playfair Display
-// Griloy = Roboto
-
-// .playfair-display-<uniquifier> {
-//   font-family: "Playfair Display", serif;
-//   font-weight: <weight>;
-//   font-style: normal;
-// }
-
-// .roboto-thin {
-//   font-family: "Roboto", sans-serif;
-//   font-weight: 100;
-//   font-style: normal;
-// }

@@ -17,7 +17,6 @@
 		margin-bottom: 200px;
 
 
-
 		&_span {
 			font-family: "Roboto", sans-serif;
 			font-weight: 700;
@@ -37,6 +36,10 @@
 				transform: translateX(0);
 				scale: 1;
 				opacity: 0.15;
+			}
+
+			&.selectDisabled {
+				user-select: none !important;
 			}
 		}
 
@@ -119,15 +122,13 @@
 				text-decoration: none;
 				color: $text-secondary;
 				scale: 0;
+				transition: scale .7s ease-out 1.6s, color .2s ease-out 0s;
 
 				&.show_animation {
-					transition: 0.7s;
-					transition-delay: 1.6s;
 					scale: 1;
 				}
 
 				&:hover {
-					transition: all 0.2s;
 					color: rgb(99, 83, 83);
 				}
 			}

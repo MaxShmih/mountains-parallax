@@ -245,6 +245,11 @@ body {
       text-transform: uppercase;
       color: $text-secondary;
 
+      &::selection {
+        color: #000;
+        background-color: transparent;
+      }
+
       &_animation {
         animation: componentsToHeroTranslateX 0.9s ease-in-out;
       }
