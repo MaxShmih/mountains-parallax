@@ -6,10 +6,22 @@
 	padding: 0 230px;
 	background-color: #0e1f29;
 	margin-bottom: 120px;
+	
+
+	@media (width <= 1024px) {
+		padding: 0 100px;
+		// flex-direction: column;
+	}
 
 	&_left {
 		color: $text-main;
 		max-width: 300px;
+
+		@media (width <= 1024px) {
+			display: flex;
+			max-width: 100%;
+			flex-direction: column;
+		}
 
 		&_span {
 			font-family: "Playfair Display", serif;
@@ -26,7 +38,11 @@
 			font-family: "Roboto", sans-serif;
 			max-width: 280px;
 			font-weight: 600;
-			font-size: 18px;
+			font-size: clamp(0.875rem, 0.7614rem + 0.5682vw, 1.125rem);
+
+			@media (width <= 1024px) {
+				max-width: 150px;
+			}
 
 			&::selection {
 				color: $text-secondary;
