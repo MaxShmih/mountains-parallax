@@ -239,6 +239,14 @@ body {
     &_li {
       &:not(:last-child) {
         margin-right: 25px;
+
+        @media (width <= 1024px) {
+          margin-right: 70px;
+        }
+
+        @media (width <= 480px) {
+          margin-right: 40px;
+        }
       }
     }
 

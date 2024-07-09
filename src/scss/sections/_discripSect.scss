@@ -37,12 +37,11 @@
 			align-items: center;
 			padding: 0 70px !important;
 			height: 100vh !important;
-			margin-bottom: 50px;
 		}
 
-		@media (width <=480px) {
-			padding: 0 50px !important;
-		}
+		// @media (width <=480px) {
+		// 	padding: 0 50px !important;
+		// }
 
 		
 
@@ -272,8 +271,8 @@
 			margin-top: 30px;
 		}
 
-		@media (width <=768px) {
-			margin-top: 0px !important;
+		@media (width <=770px) {
+			margin-top: 50px;
 		}
 	}
 }

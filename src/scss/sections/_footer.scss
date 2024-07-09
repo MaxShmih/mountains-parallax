@@ -6,11 +6,33 @@
 	padding: 0 230px;
 	background-color: #0e1f29;
 	margin-bottom: 120px;
+	position: relative;
 	
 
 	@media (width <= 1024px) {
-		padding: 0 100px;
-		// flex-direction: column;
+		padding: 0 0 0 100px;
+		max-width: 100%;
+		justify-content: space-around;
+	}
+
+	@media (width <= 768px) {
+		padding: 0 0 0 70px;
+		max-width: 100%;
+		justify-content: space-around;
+	}
+
+	@media (width <= 480px) {
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	@media (width <= 370px) {
+		padding: 0 0 0 40px;
+	}
+
+	@media (width <= 355px) {
+		margin-top: 40px;
 	}
 
 	&_left {
@@ -21,6 +43,13 @@
 			display: flex;
 			max-width: 100%;
 			flex-direction: column;
+		}
+
+		@media (width <= 480px) {
+			width: 100%;
+			align-items: center;
+			justify-content: space-around;
+			flex-direction: row;
 		}
 
 		&_span {
@@ -56,10 +85,22 @@
 		column-gap: 100px;
 		font-family: "Roboto", sans-serif;
 
+		@media (width <= 480px) {
+			margin-right: 25px;
+		}
+
 		&_title {
 			font-size: 24px;
 			font-weight: 700;
 			color: #FBD784;
+
+			@media (width <= 768px) {
+				font-size: 20px;
+			}
+
+			@media (width <= 480px) {
+				font-size: 17px;
+			}
 
 			&::selection {
 				color: #000;
@@ -108,5 +149,33 @@
 			flex-direction: column;
 			gap: 15px;
 		}
+	}
+
+	.hero_social_bottom {
+		display: none;
+
+		@media (width <= 1024px) {
+			display: flex;
+			transform: rotate(270deg);
+			position: absolute;
+			bottom: -10%;
+			left: 50%;
+		}
+
+		@media (width <= 1024px) {
+			left: 39%;
+		}
+
+		@media (width <= 768px) {
+			left: 34%;
+		}
+
+		@media (width <= 480px) {
+			left: 35%;
+		}
+	}
+
+	.hero_social_li_twitter {
+		transform: rotate(90deg);
 	}
 }
